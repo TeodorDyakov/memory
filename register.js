@@ -1,16 +1,19 @@
 function register(){
-    const pass = document.getElementById("pass");
-    const email = document.getElementById("email");
+    const pass = document.getElementById("pass").value;
+    const email = document.getElementById("email").value;
+    const repeatPass = document.getElementById("repeat-pass").value;
+
     var ok = true;
- 
+    
     if(!validateEmail(email)){
+        console.log("asddfd");
         document.getElementById('email-err').style.display = "block";
         ok = false;
     }else{
         document.getElementById('email-err').style.display = "none";
     }
 
-    if(!pass.length < 6){
+    if(pass.length < 6){
         document.getElementById('pass-err-len').style.display = "block";
         ok = false;
     }else{
@@ -22,6 +25,13 @@ function register(){
         ok = false;
     }else{
         document.getElementById('pass-alphanum-err').style.display = "none";
+    }
+    
+    if(repeatPass != pass){
+        ok = false;
+        document.getElementById('pass-err-match').style.display = "block";
+    }else{
+        document.getElementById('pass-err-match').style.display = "none";
     }
     
     if(ok){

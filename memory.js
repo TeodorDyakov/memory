@@ -73,20 +73,6 @@ function shuffleCards() {
 
 shuffleCards();
 
-var newgame = false;
-function checkGameState(){
-    var first_element = document.getElementById("minutes");
-    var second_element = document.getElementById("seconds");
-
-    if(clickedCard == null){
-        if(first_element.innerText>"0" && second_element.innerText>"0"){
-            newgame = true;
-        }
-    }
-
-    var btnready = document.getElementById('button-ready');
-    btnready.addEventListener('click',stopTimer,false);
-}
 function newGame() {
     timer = 0;
     timestop = false;
@@ -175,7 +161,6 @@ function render() {
                 cards_left -= 2;
             }
         }
-        console.log(cards_left);
         if(cards_left == 0){
             gameState = game_over;
             timestop = true;

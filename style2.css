@@ -38,6 +38,7 @@ input{
 }
 
 button{
+    cursor: pointer;
     font-size: 18px;
     color: white;
     margin: 0 auto;
@@ -45,6 +46,10 @@ button{
     border: 1px;
     border-radius: 10px;
     display: block;
+}
+
+.error{
+   display: none;    
 }
 
 .center{

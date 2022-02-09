@@ -7,13 +7,16 @@
     <body>
         <div class = "center">
             <h1>Login</h1>
-            <input type = "text" placeholder="Email">
-            <input type = "password" placeholder="Password">
-            <button id = "login-button">Login</button>
+            <label id = "non-existent-err" class = "error">User with this email does not exist!</label>
+            <input type = "text" placeholder="Email" id = "email">
+            <label id = "wrong-pass-err"  class = "error" >Wrong password!</label>
+            <input type = "password" placeholder="Password" id = "pass">
+            <button id = "login-button"onclick = "login()">Login</button>
             <div id = "or-div">
                 <label>or</label>
             </div>
             <button id = "register-button">Register</button>
         </div>
+        <script src = "loginAndRegister.js"></script>
     </body>
 </html>

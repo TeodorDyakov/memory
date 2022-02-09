@@ -59,16 +59,14 @@ body{
     border: 2px gray solid; 
     border-radius: 10px;
     margin-right: 50px;
+    cursor: pointer;
 }
 
 #section-canvas{
-    /* display:flex; */
     margin-top: 50px;
     width: 700px;
     margin-left: auto;
     margin-right: auto;
-    /* align-items:center;
-    justify-content:center; */
 }
 
 .flex-score{

@@ -6,11 +6,16 @@
     </head>
     <body>
         <div class = "center">
-            <h1>Login</h1>
-            <input type = "text" placeholder="Username">
-            <input type = "password" placeholder="Password">
-            <input type = "password" placeholder="Repeat password">
-            <button id = "login-button">Register</button>
+            <h1>Register</h1>
+            <label id = "email-err" class = "error">Email is not valid!</label>
+            <input type = "text" placeholder="Email" id = "email">
+            <label id = "pass-err-len" class = "error">Password must be 6 more or characters!</label>
+            <label id = "pass-alphanum-err" class = "error">Password must contain at least one number and one character!</label>
+            <input type = "password" placeholder="Password" id = "pass">
+            <label id = "pass-err-match" class = "error">Passwords do not match!</label>
+            <input type = "password" placeholder="Repeat password" id = "repeat-pass">
+            <button id = "login-button" onclick="register()">Register</button>
         </div>
+        <script src = "register.js"></script>
     </body>
 </html>
