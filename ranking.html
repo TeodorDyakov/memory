@@ -1,0 +1,83 @@
+<html>
+
+<head></head>
+
+<body>
+    <div class="section-table">
+    <table id="table">
+        <tr>
+            <th id="username">Username</th>
+            <th id="time">Time</th>
+        </tr>
+    </table>
+    </div>
+</body>
+<style>
+
+    .section-table{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin-top:150px;
+    }
+    table{
+        width:50%;
+        border-collapse:collapse;
+        border:2px solid #0012ff;
+        border-radius:20px;
+    }
+
+    table tr{
+        background-color:rgb(37, 209, 186);
+        border:1px solid #0012ff;
+        box-sizing: border-box;
+        height:50px;
+        
+    }
+
+    table tr #username{
+        width:140px;
+        
+    }
+    table tr #time{
+        width:100px;
+        
+    }
+</style>
+<script>
+
+    function loadTable() {
+        var table = document.getElementById('table');
+
+        var myscores = JSON.parse(localStorage.getItem("scores"));
+        if (!myscores) {
+            return;
+        }
+        myscores.sort((a, b) => (a.score > b.score) ? 1 : ((b.score > a.score) ? -1 : 0));
+
+        if (myscores) {
+            for (let i = 0; i < myscores.length; i++) {
+                var tr = document.createElement("tr");
+
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                var minutes =0;
+                var seconds = 
+                td1.innerText = i.toString() +" . " + myscores[i].username;
+                td2.innerText = myscores[i].score + " sec ";
+                if(myscores[i].score >60){
+                    minutes = myscores[i].score/60;
+
+                }
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+
+                table.appendChild(tr);
+            }
+        }
+    }
+    loadTable();
+</script>
+
+</html>
